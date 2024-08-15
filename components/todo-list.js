@@ -21,11 +21,7 @@ export default function ToDoList() {
     if (completed !== undefined) {
       path = `/todos?completed=${completed}`;
     }
-    const res = await fetch(process.env.NEXT_PUBLIC_API_URL + path, {
-      mode: "no-cors",
-    })
-      .then((response) => console.log(response))
-      .catch((error) => console.error("Error:", error));
+    const res = await fetch(process.env.NEXT_PUBLIC_API_URL + path);
     const json = await res.json();
     setTodos(json);
   }
@@ -167,6 +163,7 @@ export default function ToDoList() {
           Completed
         </button>
       </div>
+      s
     </div>
   );
 }
